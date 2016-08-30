@@ -15,17 +15,8 @@
 
             $password = password_hash($sanitized_password, PASSWORD_BCRYPT, array('cost' => 12) );
 
-                //old password method DELETE!!
-            // $query = "SELECT randSalt FROM users";
-            // $select_randsalt_query = mysqli_query($connection, $query);
-            $message = "<h6 class='text-center bg-success'>Your registration has been submitted</h6>";
-            // if (!$select_randsalt_query) {
-            //     die("Query Failed" . mysqli_error($connection));
-            // }
-            // $row = mysqli_fetch_array($select_randsalt_query);
-            // $salt = $row['randSalt'];
 
-            // $password = crypt($password, $salt);
+            $message = "<h6 class='text-center bg-success'>Your registration has been submitted</h6>";
 
             $query = "INSERT INTO users (username, user_email, user_password, user_role) ";
             $query .= "VALUES('{$username}','{$email}', '{$password}', 'Subscriber' )";
